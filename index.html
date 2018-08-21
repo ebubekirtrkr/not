@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GateWay Giriş Ortalaması</title>
+	<link rel="stylesheet" type="text/css" href="paper.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+	.row{
+		margin: auto;
+		width: 50%;
+		padding: 10px;
+	}
+	.form-group{
+		padding-right: 20px;
+	}
+	input{
+		width: 8.75em;
+	}	
+
+	
+</style>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-4">
+			
+			<div class="form-group">
+				<p class="text-secondary">Sınavlar:</p>
+				<div class="other">
+					<label for="exam1">  Quiz Notu:  </label>
+					<input type="number" name="exam1" placeholder="20 puan üzerinden" ><br>
+
+					<label for="exam2"> Achievement Test Notu:  </label>
+					<input type="number" name="exam2" placeholder="100 puan üzerinden"  ><br>
+
+					<label for="oral"> Mini Oral Exam Notu:  </label>
+					<input type="number" name="oral" placeholder="20 puan üzerinden"  >
+					
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-md-4">
+			
+			<div class="form-group">
+				<p class="text-secondary">Writing Folder 1:</p>
+				<div class="wrtng">
+					<label for="wrtng1_1">  First Draft  Notu:  </label>
+					<input type="number" name="wrtng1_1" placeholder="5 puan üzerinden" ><br>
+					<label for="wrtng1_2"> Second Draft Notu:  </label>
+					<input type="number" name="wrtng1_2" placeholder="5 puan üzerinden"  ><br>
+					<label for="wrtng1_3"> Exam Notu:  </label>
+					<input type="number" name="wrtng1_3" placeholder="10 puan üzerinden " >
+				</div>
+			</div>
+			
+			
+		</div>
+		<div class="col-md-4">
+			
+			<div class="form-group">
+				<p class="text-secondary">Writing Folder 2:</p>
+				<div class="wrtng">
+					<label for="wrtng2_1"> First Draft  Notu:  </label>
+					<input type="number" name="wrtng2_1" placeholder="5 puan üzerinden" ><br>
+					<label for="wrtng2_2"> Second Draft Notu:  </label>
+					<input type="number" name="wrtng2_2" placeholder="5 puan üzerinden " ><br>
+					<label for="wrtng2_3"> Exam Notu:  </label>
+					<input type="number" name="wrtng2_3" placeholder="10 puan üzerinden" >
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<button class="btn-secondary" onclick="hesapla()">HESAPLA</button>
+		</div>
+	</div>
+	
+
+	<script>
+		function hesapla() {
+			var exam1 = parseFloat(document.querySelectorAll('[name="exam1"]')[0].value);
+			var exam2 = parseFloat(document.querySelectorAll('[name="exam2"]')[0].value);
+			var oral = parseFloat(document.querySelectorAll('[name="oral"]')[0].value);
+			var wrtng1_1 = parseFloat(document.querySelectorAll('[name="wrtng1_1"]')[0].value);
+			var wrtng1_2 = parseFloat(document.querySelectorAll('[name="wrtng1_2"]')[0].value);
+			var wrtng1_3 = parseFloat(document.querySelectorAll('[name="wrtng1_3"]')[0].value);
+			var wrtng2_1 = parseFloat(document.querySelectorAll('[name="wrtng2_1"]')[0].value);
+			var wrtng2_2 = parseFloat(document.querySelectorAll('[name="wrtng2_2"]')[0].value);
+			var wrtng2_3 = parseFloat(document.querySelectorAll('[name="wrtng2_3"]')[0].value);
+			if (isNaN(exam1)) {exam1=0;}
+			if (isNaN(exam2)) {exam2=0;}
+			if (isNaN(oral)) {oral=0;}
+			if (isNaN(wrtng1_1)) {wrtng1_1=0;}
+			if (isNaN(wrtng1_2)) {wrtng1_2=0;}
+			if (isNaN(wrtng1_3)) {wrtng1_3=0;}
+			if (isNaN(wrtng2_1)) {wrtng2_1=0;}
+			if (isNaN(wrtng2_2)) {wrtng2_2=0;}
+			if (isNaN(wrtng2_3)) {wrtng2_3=0;}
+			var ort =exam1+(exam2*40/100)+oral+(wrtng1_1+wrtng1_2+wrtng1_3+wrtng2_1+wrtng2_2+wrtng2_3)/2;
+			window.alert("ORTALAMANIZ:    "+ort);}
+
+	</script>
+</body>
+</html>
